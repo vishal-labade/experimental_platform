@@ -329,3 +329,8 @@ Impact: none
 </br>
 
 ![alt text](image-1.png)
+
+
+# License
+
+This project is licensed under the MIT License.
