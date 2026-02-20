@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "experiment_registry",
+  "type": "object",
+  "required": ["experiment_id", "name", "start_ts", "end_ts", "variants", "primary_metrics"],
+  "properties": {
+    "experiment_id": {"type": "string"},
+    "name": {"type": "string"},
+    "start_ts": {"type": "string", "format": "date-time"},
+    "end_ts": {"type": "string", "format": "date-time"},
+    "owner": {"type": "string"},
+    "variants": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 2
+    },
+    "primary_metrics": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
+    "guardrail_metrics": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": []
+    },
+    "notes": {"type": "string"}
+  }
+}

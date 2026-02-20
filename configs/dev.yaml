@@ -1,0 +1,121 @@
+minio:
+  endpoint: "http://10.0.0.80:9100"
+  access_key: "minioadmin"
+  secret_key: "minioadmin"
+  raw_bucket: "raw"
+
+paths:
+  # root folder where each experiment writes: data/raw/<experiment_id>/
+  local_raw_root: "data/raw"
+
+synthetic:
+  # global defaults (used for any experiment not explicitly overridden)
+  default:
+    seed: 7
+    start_date: "2026-01-01"
+    days: 14
+    n_users: 50000
+    exposure_rate: 0.85
+    treatment_share: 0.5
+    base_conversion: 0.10
+    effect_lift_conversion: 0.05
+    revenue_mean: 12.5
+    revenue_sd: 3.0
+    pre_period_days: 14
+
+  # per-experiment overrides (ad-hoc experiments live here)
+  scenarios:
+    exp_checkout_button_001:
+      seed: 7
+      days: 14
+      n_users: 30000
+      effect_lift_conversion: 0.03
+
+    exp_pricing_test_003:
+      seed: 33
+      n_users: 12000
+      treatment_share: 0.5
+      effect_lift_conversion: 0.01
+      revenue_mean: 15.0
+      revenue_sd: 6.0
+    
+    exp_add_cart_002:
+      seed: 51
+      n_users: 40000
+      treatment_share: 0.5
+      effect_lift_conversion: 0.02
+      revenue_mean: 12.0
+      revenue_sd: 3.0
+    
+
+    exp_precision_small_n:
+      seed: 7
+      start_date: "2026-01-01"
+      days: 14
+      n_users: 10000          # ↓ from 50k
+      exposure_rate: 0.85
+      treatment_share: 0.5
+      base_conversion: 0.10
+      effect_lift_conversion: 0.05
+      revenue_mean: 12.5
+      revenue_sd: 3.0
+      pre_period_days: 14
+
+
+    exp_precision_large_n:
+      seed: 7
+      start_date: "2026-01-01"
+      days: 14
+      n_users: 200000         # ↑ bigger than default
+      exposure_rate: 0.85
+      treatment_share: 0.5
+      base_conversion: 0.10
+      effect_lift_conversion: 0.05
+      revenue_mean: 12.5
+      revenue_sd: 3.0
+      pre_period_days: 14
+
+    
+    exp_precision_short_run:
+      seed: 7
+      start_date: "2026-01-01"
+      days: 3                 # ↓ from 14
+      n_users: 50000
+      exposure_rate: 0.85
+      treatment_share: 0.5
+      base_conversion: 0.10
+      effect_lift_conversion: 0.05
+      revenue_mean: 12.5
+      revenue_sd: 3.0
+      pre_period_days: 14
+
+    
+    exp_precision_long_run:
+      seed: 7
+      start_date: "2026-01-01"
+      days: 28                # ↑ longer
+      n_users: 50000
+      exposure_rate: 0.85
+      treatment_share: 0.5
+      base_conversion: 0.10
+      effect_lift_conversion: 0.05
+      revenue_mean: 12.5
+      revenue_sd: 3.0
+      pre_period_days: 14
+    
+    exp_big_exp_run:
+      seed: 10
+      start_date: "2026-01-01"
+      days: 28                # ↑ longer
+      n_users: 1000000
+      exposure_rate: 0.85
+      treatment_share: 0.5
+      base_conversion: 0.10
+      effect_lift_conversion: 0.05
+      revenue_mean: 12.5
+      revenue_sd: 3.0
+      pre_period_days: 14
+
+
+
+

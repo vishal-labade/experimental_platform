@@ -1,0 +1,151 @@
+experimentation-causal-platform/
+.
+├── configs
+│   ├── dev.yaml
+│   └── prod.yaml
+├── data
+│   ├── curated
+│   ├── memos
+│   │   ├── exp_add_cart_002.md
+│   │   ├── exp_checkout_button_001.md
+│   │   └── exp_pricing_test_003.md
+│   └── raw
+│       └── exp_checkout_button_001
+│           ├── experiment_registry.parquet
+│           ├── exposures.parquet
+│           └── outcomes.parquet
+├── docker
+│   └── runner
+│       └── Dockerfile
+├── docker-compose.exp.yml
+├── docs
+│   ├── ab_inference.md
+│   ├── architecture.md
+│   ├── causal_inference_did.md
+│   ├── cuped.md
+│   ├── decision_memo_template.md
+│   ├── logging_to_iceberg.md
+│   ├── memo_asis_exp_add_cart_002.md
+│   ├── memo_exp_checkout_button_001.md
+│   ├── metrics_layer.md
+│   ├── productization.md
+│   ├── project_skeleton.md
+│   └── run_instructions.md
+├── exp_platform
+│   ├── causal
+│   │   ├── did.py
+│   │   └── __pycache__
+│   │       └── did.cpython-311.pyc
+│   ├── config.py
+│   ├── generate_synth.py
+│   ├── __init__.py
+│   ├── io
+│   │   ├── analysis_results.py
+│   │   ├── analysis_writer.py
+│   │   ├── __init__.py
+│   │   ├── paths.py
+│   │   └── __pycache__
+│   │       ├── analysis_results.cpython-311.pyc
+│   │       ├── analysis_writer.cpython-311.pyc
+│   │       ├── __init__.cpython-311.pyc
+│   │       ├── __init__.cpython-312.pyc
+│   │       └── paths.cpython-312.pyc
+│   ├── memo.py
+│   ├── metrics
+│   │   ├── definitions.py
+│   │   └── __pycache__
+│   │       └── definitions.cpython-311.pyc
+│   ├── pipelines
+│   │   ├── analyze_experiment_cuped.py
+│   │   ├── analyze_experiment_did.py
+│   │   ├── analyze_experiment.py
+│   │   ├── compute_metric_aggregates.py
+│   │   ├── did_pretrends.py
+│   │   ├── dnu_did_pretrends.py
+│   │   ├── dq_report.py
+│   │   ├── ingest_exposures.py
+│   │   ├── ingest_outcomes.py
+│   │   ├── ingest_registry.py
+│   │   ├── __pycache__
+│   │   │   ├── analyze_experiment.cpython-311.pyc
+│   │   │   ├── analyze_experiment_cuped.cpython-311.pyc
+│   │   │   ├── analyze_experiment_did.cpython-311.pyc
+│   │   │   ├── compute_metric_aggregates.cpython-311.pyc
+│   │   │   ├── did_pretrends.cpython-311.pyc
+│   │   │   ├── dq_report.cpython-311.pyc
+│   │   │   ├── ingest_exposures.cpython-311.pyc
+│   │   │   ├── ingest_outcomes.cpython-311.pyc
+│   │   │   ├── ingest_registry.cpython-311.pyc
+│   │   │   ├── run_end_to_end.cpython-311.pyc
+│   │   │   ├── run_ingest.cpython-311.pyc
+│   │   │   └── write_memo.cpython-311.pyc
+│   │   ├── run_end_to_end.py
+│   │   ├── run_ingest.py
+│   │   └── write_memo.py
+│   ├── __pycache__
+│   │   ├── config.cpython-311.pyc
+│   │   ├── config.cpython-312.pyc
+│   │   ├── generate_synth.cpython-311.pyc
+│   │   ├── __init__.cpython-311.pyc
+│   │   ├── __init__.cpython-312.pyc
+│   │   └── memo.cpython-311.pyc
+│   ├── schemas.py
+│   ├── scripts
+│   │   ├── DNU_smoke_spark_iceberg_minio.py
+│   │   ├── fetch_spark_jars.py
+│   │   ├── smoke_generate_local.py
+│   │   ├── smoke_generate_minio.py
+│   │   └── smoke_spark_iceberg_minio.py
+│   ├── spark
+│   │   ├── analysis_results.py
+│   │   ├── __init__.py
+│   │   ├── __pycache__
+│   │   │   ├── analysis_results.cpython-311.pyc
+│   │   │   ├── __init__.cpython-311.pyc
+│   │   │   └── session.cpython-311.pyc
+│   │   └── session.py
+│   ├── stats
+│   │   ├── ab_inference.py
+│   │   ├── cuped.py
+│   │   └── __pycache__
+│   │       ├── ab_inference.cpython-311.pyc
+│   │       └── cuped.cpython-311.pyc
+│   └── synth
+│       ├── generate.py
+│       ├── __init__.py
+│       └── __pycache__
+│           ├── generate.cpython-311.pyc
+│           ├── generate.cpython-312.pyc
+│           ├── __init__.cpython-311.pyc
+│           └── __init__.cpython-312.pyc
+├── exp_platform.egg-info
+│   ├── dependency_links.txt
+│   ├── entry_points.txt
+│   ├── PKG-INFO
+│   ├── requires.txt
+│   ├── SOURCES.txt
+│   └── top_level.txt
+├── folder_structure.txt
+├── image-1.png
+├── image.png
+├── Makefile
+├── pyproject.toml
+├── README.md
+├── schemas
+│   ├── experiment_registry.schema.json
+│   ├── exposure.schema.json
+│   └── outcomes.schema.json
+├── spark-warehouse
+└── tests
+    ├── test_cli_contracts.sh
+    └── test_logs
+        ├── cross_check_key_lifts_across_experiments.txt
+        ├── exp_add_cart_002.txt
+        ├── exp_checkout_button_001.txt
+        ├── experiment_rerun_test.txt
+        ├── exp_pricing_test_003.txt
+        ├── table_data_persistence_post_rerun.txt
+        └── table_data_persistence.txt
+
+32 directories, 115 files
+

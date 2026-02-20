@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "exposures",
+  "type": "object",
+  "required": ["experiment_id", "user_id", "variant", "exposure_ts", "unit"],
+  "properties": {
+    "experiment_id": {"type": "string"},
+    "user_id": {"type": "string"},
+    "variant": {"type": "string", "enum": ["control", "treatment"]},
+    "exposure_ts": {"type": "string", "format": "date-time"},
+    "unit": {"type": "string", "enum": ["user_id"]}
+  }
+}

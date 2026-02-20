@@ -236,7 +236,7 @@ iceberg.exp.*
 Primary results table:
 
 ```
-iceberg.exp.analysis_results
+iceberg.exp.analysis_results_*
 ```
 
 Contains:
@@ -317,7 +317,12 @@ Impact: none
 - ✅ Reproducible analysis outputs
 - ✅ Fully local, no cloud dependency
 
-## 11. Technical Architecture Visualization:
+## 11. Key Directories/Folders:
+
+1. `./docs`: Contains all important docs that highlight design, trade-offs, high level objectives key platforms features such as ab_inference, and more importantly platform validations i.e `08_statistical_validation.md` aand `09_experiment_scenarios.md`. The numbering follows same order that used in creating this platform.
+2. `./notebooks`: All notebooks used in platform validation and experiment scenarios.
+
+## 12. Technical Architecture Visualization:
 
 
 </br>

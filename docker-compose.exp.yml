@@ -1,0 +1,18 @@
+services:
+  exp-runner:
+    build:
+      context: .
+      dockerfile: docker/runner/Dockerfile
+    container_name: exp-runner
+    working_dir: /workspace
+    volumes:
+      - ./:/workspace
+      - ${PWD}/spark-defaults.conf:/opt/spark-conf/spark-defaults.conf:ro
+      - /home/vishal/codebase/projects/experimental_platform/runner_jars:/opt/runner-jars:ro
+    environment:
+      - SPARK_CONF_DIR=/opt/spark-conf
+      - PYSPARK_SUBMIT_ARGS=--properties-file /opt/spark-conf/spark-defaults.conf pyspark-shell
+      - AWS_ACCESS_KEY_ID=minioadmin
+      - AWS_SECRET_ACCESS_KEY=minioadmin
+      - AWS_DEFAULT_REGION=us-east-1
+    network_mode: host

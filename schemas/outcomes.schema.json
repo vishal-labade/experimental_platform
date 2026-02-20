@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "outcomes",
+  "type": "object",
+  "required": ["experiment_id", "user_id", "metric_name", "value", "outcome_ts"],
+  "properties": {
+    "experiment_id": {"type": "string"},
+    "user_id": {"type": "string"},
+    "metric_name": {"type": "string"},
+    "value": {"type": "number"},
+    "outcome_ts": {"type": "string", "format": "date-time"}
+  }
+}

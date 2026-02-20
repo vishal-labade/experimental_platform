@@ -1,0 +1,41 @@
+[project]
+name = "exp-platform"
+version = "0.1.0"
+description = "Experimentation & Causal Inference Platform (homelab-friendly)"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "pydantic>=2.6",
+  "pyyaml>=6.0",
+  "pandas>=2.0",
+  "pyarrow>=14.0",
+  "numpy>=1.24",
+  "s3fs>=2024.3.1",
+  "fsspec>=2024.3.1",
+]
+
+[project.optional-dependencies]
+spark = [
+  "pyspark>=3.4.1",
+]
+
+dev = [
+  "pytest>=7.4",
+  "ruff>=0.4",
+]
+
+[project.scripts]
+exp-platform = "exp_platform.cli:main"
+exp-run = "exp_platform.pipelines.run_end_to_end:main"
+
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "UP", "B"]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["exp_platform"]
