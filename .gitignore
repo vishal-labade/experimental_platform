@@ -1,0 +1,117 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+dist/
+build/
+pip-wheel-metadata/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# =========================
+# Jupyter / IPython
+# =========================
+.ipynb_checkpoints/
+.ipython/
+.profile_default/
+
+# =========================
+# IDEs / Editors
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Data & Artifacts
+# =========================
+data/*
+*.parquet
+*.arrow
+*.csv
+# But allow memos folder
+!data/memos/
+!data/memos/**
+
+# =========================
+# Spark / Hadoop
+# =========================
+spark-warehouse/
+metastore_db/
+derby.log
+*.crc
+
+# Spark local dirs (esp. when running locally)
+spark-local-*/
+spark-events/
+spark-history/
+
+# =========================
+# Iceberg
+# =========================
+iceberg/
+warehouse/
+*.avro
+*.orc
+
+# =========================
+# MinIO
+# =========================
+minio-data/
+.minio.sys/
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+
+# =========================
+# Secrets / Credentials
+# =========================
+.env
+.env.*
+*.key
+*.pem
+*.crt
+*.jks
+*.p12
+*.keystore
+
+# =========================
+# Test / Coverage
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# =========================
+# Ruff / Lint
+# =========================
+.ruff_cache/
+
+# =========================
+# Temporary / Scratch
+# =========================
+tmp/
+scratch/
+
+# jars
+*.jar
+
